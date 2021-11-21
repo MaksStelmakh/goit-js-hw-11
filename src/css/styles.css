@@ -22,7 +22,7 @@ form {
   margin: 0 auto;
 }
 input,
-button {
+.submit-btn {
   border: none;
   outline: none;
   border-radius: 3px;
@@ -33,7 +33,7 @@ input {
   background: #f9f0da;
   padding-left: 15px;
 }
-button {
+.submit-btn {
   height: 26px;
   width: 26px;
   position: absolute;
@@ -42,7 +42,7 @@ button {
   background: #f15b42;
   cursor: pointer;
 }
-button:before {
+.submit-btn:before {
   content: '\f105';
   font-family: FontAwesome;
   color: #f9f0da;
@@ -58,11 +58,14 @@ button:before {
 }
 
 .image-info {
+  margin: 0 auto;
   list-style: none;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   margin-right: -15px;
   margin-bottom: -20px;
+  margin-bottom: 50px;
 }
 
 .image-box {
@@ -89,3 +92,91 @@ button:before {
 .name-numbers {
   font-weight: 700;
 }
+
+.img-hover:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.gallery {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loader {
+  opacity: 0;
+  margin: 0 auto;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #dabb52;
+  border-bottom: 16px solid #dabb52;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2x linear infinite;
+}
+
+.loader.show {
+  opacity: 1;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .loading {
+  opacity: 0;
+  display: flex;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 3000 ease-in;
+}
+
+.loading.show {
+  opacity: 1;
+}
+
+.ball {
+  background-color: #777;
+  border-radius: 50%;
+  margin: 5px;
+  height: 10px;
+  width: 10px;
+  animation: jump 5000 ease-in infinite;
+}
+
+.ball:nth-of-type(2) {
+  animation-delay: 100;
+}
+
+.ball:nth-of-type(3) {
+  animation-delay: 200;
+}
+
+@keyframes jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+} */
