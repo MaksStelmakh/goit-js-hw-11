@@ -26,8 +26,6 @@ function infiniteScroll() {
   }
 }
 
-gallery.addEventListener(`click`, onOpenGalleryClick)
-
 input.addEventListener(`submit`, onSearch)
 
 function onSearch(evt) {
@@ -80,9 +78,10 @@ function createGallery(resp) {
     Notiflix.Notify.success(`Hooray! We found ${resp.totalHits} images.`);
   } 
   loadMore.classList.remove(`show`)
-  return resp.hits.map(({ webformatURL, likes, views, comments, downloads, tags, largeImageURL }) => {
-            return gallery.insertAdjacentHTML(`beforeend`, articles({ webformatURL, likes, views, comments, downloads, tags, largeImageURL }))
-        }).join("")
+  resp.hits.map(({ webformatURL, likes, views, comments, downloads, tags, largeImageURL }) => {
+      gallery.insertAdjacentHTML(`beforeend`, articles({ webformatURL, likes, views, comments, downloads, tags, largeImageURL }))
+  }).join("")
+  onOpenGalleryClick()
         }    
 
 
